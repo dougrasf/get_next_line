@@ -74,7 +74,7 @@ char *get_conteudo(int fd, char *conteudo)
     if (buff == 0)
         return (NULL);
     valueread = 1;
-    while(!ft_strchr(conteudo, '\n') && valueread != 0)
+    while(ft_strchr(conteudo, '\n') == 0 && valueread != 0)
     {
         valueread = read(fd, buff, BUFFER_SIZE);
         if(valueread == -1)
@@ -113,6 +113,25 @@ char *get_linha(char *conteudo)
     return(linha);
 }
 
+char *get_restante(char *conteudo)
+{
+    int index;
+    int count;
+    char *restante;
+
+    index = 0;
+    while(conteudo[index] && conteudo[index] != '\n')
+        index++;
+    index++;
+    restante = malloc(ft_strlen(conteudo) - index);
+    count = 0;
+    while(conteudo[index])
+        restante[count++] = conteudo[index++];
+    restante[count] = '\0';
+    free(conteudo);
+    return (restante);
+}
+
 char *get_next_line(int fd)
 {
     static char *conteudo;
@@ -122,7 +141,7 @@ char *get_next_line(int fd)
     if (conteudo == 0)
         return(0);
     linha = get_linha(conteudo);
-    free(conteudo);
+    conteudo = get_restante(conteudo);
     return(linha);
 }
 
@@ -134,7 +153,13 @@ int main(void)
     filedescriptor = open("teste", 'r');
     str = get_next_line(filedescriptor);
     printf("str:%s", str);
-    
+    free(str);
+    str = get_next_line(filedescriptor);
+    printf("str:%s", str);
+    free(str);
+    str = get_next_line(filedescriptor);
+    printf("str:%s", str);
+    free(str);
     close(filedescriptor);
     return (0);
 }
