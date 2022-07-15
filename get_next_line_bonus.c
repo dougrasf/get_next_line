@@ -6,11 +6,11 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 22:36:17 by dofranci          #+#    #+#             */
-/*   Updated: 2022/07/14 21:44:16 by dofranci         ###   ########.fr       */
+/*   Updated: 2022/07/14 22:10:15 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static char	*get_content(int fd, char *content)
 {
