@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_bonus_utils.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 22:35:15 by dofranci          #+#    #+#             */
-/*   Updated: 2022/07/07 20:14:12 by dofranci         ###   ########.fr       */
+/*   Updated: 2022/07/14 21:27:01 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include	"get_next_line.h"
 
 size_t	ft_strlen(const char *str)
 {
@@ -55,18 +55,12 @@ char	*ft_strjoin(char *s1, char *s2)
 	dst = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (dst == NULL)
 		return (NULL);
-	x = 0;
-	while (s1[x] != '\0')
-	{
+	x = -1;
+	while (s1[++x] != '\0')
 		dst[x] = s1[x];
-		x++;
-	}
-	y = 0;
-	while (s2[y] != '\0')
-	{
+	y = -1;
+	while (s2[++y] != '\0')
 		dst[x + y] = s2[y];
-		y++;
-	}
 	dst[x + y] = '\0';
 	free(s1);
 	return (dst);
