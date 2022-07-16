@@ -6,7 +6,7 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 22:36:17 by dofranci          #+#    #+#             */
-/*   Updated: 2022/07/14 21:42:05 by dofranci         ###   ########.fr       */
+/*   Updated: 2022/07/16 18:46:43 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
 	content = get_content(fd, content);
-	if (!content || !*content)
+	if (!content)
 		return (0);
 	line = get_line(content);
 	content = get_rest(content);
