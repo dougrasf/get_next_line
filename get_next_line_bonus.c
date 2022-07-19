@@ -6,7 +6,7 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 22:36:17 by dofranci          #+#    #+#             */
-/*   Updated: 2022/07/16 18:46:56 by dofranci         ###   ########.fr       */
+/*   Updated: 2022/07/18 21:27:27 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,16 @@ static char	*get_line(char *content)
 	int		index;
 
 	index = 0;
+	if (!content[index])
+		return (NULL);
 	while (content[index] && content[index] != '\n')
 		index++;
 	line = (char *)malloc(sizeof(char) * (index + 2));
 	index = 0;
 	while (content[index] && content[index] != '\n')
 	{
-	line[index] = content[index];
-	index++;
+		line[index] = content[index];
+		index++;
 	}
 	if (content[index] == '\n')
 	{
