@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus_utils.c                        :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 22:35:15 by dofranci          #+#    #+#             */
-/*   Updated: 2022/07/14 21:27:01 by dofranci         ###   ########.fr       */
+/*   Updated: 2022/07/20 02:08:07 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"get_next_line.h"
+#include	"get_next_line_bonus.h"
 
 size_t	ft_strlen(const char *str)
 {
